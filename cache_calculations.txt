@@ -1,0 +1,56 @@
+#################################################################
+Cache memory description (given in final project description)
+#################################################################
+1. The total capacity of cache memory = 16MB
+2. It uses 64-byte lines
+3. Set-associative memory and has 16-ways
+
+#################################################################
+Calculations of Physical Address and all Split Bits
+#################################################################
+Total capacity of cache in bytes = 16MB
+								 = 2 ^ 4 x 2 ^ 20 bytes
+								 = 2 ^ 24 bytes
+
+It uses 64-byte lines, so each cache line contains 64-bytes of data. So, the word-offset/byte-offset bits,
+
+The 64-byte lines, and have 2 ^ 6 bytes.
+So, total byte-offset bits = 6 bits
+
+#################################################################
+Therefore, total number of cache lines would be:
+#################################################################
+Number of cache lines = 2 ^ 24 bytes / 64 bytes
+					  = 2 ^ 24 / 2 ^ 6
+					  = 2 ^ 18
+
+Here, the 16-way set associative cache is used for modelling. So, the total number of sets would be:
+
+Number of sets = Total cache lines / way of associative
+		       = 2 ^ 18 / 16
+			   = 2 ^ 18 / 2 ^ 4
+			   = 2 ^ 14
+
+Total bits required to select sets = 14	bits
+
+#################################################################
+The total Physical Address bits are 32-bits
+#################################################################
+Physical Address bits = 32 bits
+Byte-offset bits = 6 bits
+Set selection bits = 14
+Tag bits = 32 - (6+14) = 12 bits
+
+#################################################################
+Valid and Dirty bit (These are internal bits of cache, not part of Physical Address)
+#################################################################
+Valid: 1-bit size
+Dirty: 1-bit size
+
+#################################################################
+PHYSICAL ADDRESS MAPPING
+#################################################################
+-----------------------------------------------------------
+|  	 12	 		|		    14				|       6	  |
+-----------------------------------------------------------
+<----------------------- 32 bits ------------------------->

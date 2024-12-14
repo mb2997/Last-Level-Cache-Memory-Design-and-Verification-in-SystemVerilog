@@ -1,0 +1,55 @@
+Start time: 19:53:13 on Nov 17,2024
+qverilog cache.sv 
+-- Compiling module cache
+-- Compiling module parser
+
+Top level modules:
+	cache
+# vsim -lib work cache -c -do "run -all; quit -f" -appendlog -l qverilog.log -vopt 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# //  Questa Sim-64
+# //  Version 10.4e win64 Apr  9 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading sv_std.std
+# Loading work.cache(fast)
+# ** Warning: (vsim-PLI-3691) parser.sv(44): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /cache/parser File: parser.sv
+# run -all
+# Input TRACE_FILE name is: rwims.din
+# 0
+# 0badbad0
+# read request from L1 data cache
+# 0
+# 1badbad2
+# read request from L1 data cache
+# 1
+# 2badbad0
+# write request from L1 data cache
+# 6
+# 0badbad0
+# snooped invalidate command
+# 6
+# 1badbad1
+# snooped invalidate command
+# 6
+# 2badbad0
+# snooped invalidate command
+# 9
+# bad0bad0
+# print contents and state of each valid cache line (does not end simulation!)
+#  quit -f
+# End time: 19:53:14 on Nov 17,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
